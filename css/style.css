@@ -153,12 +153,18 @@ input[name=view]:checked + .container .container__toggleview {
   border-radius: 50%;
   position: relative;
   transition: all 0.25s;
-  box-shadow: inset 0 0 1px transparent;
   color: #b1bfcd;
+  border: 1px solid transparent;
 }
 
 .profile-form__option-selector:hover {
-  box-shadow: inset 0 0 1px #b3c1ce;
+  border: 1px solid #b3c1ce;
+}
+
+.profile-form__option:nth-of-type(1):checked ~ .profile-form__option-selector:hover,
+.profile-form__option:nth-of-type(2):checked ~ .profile-form__option-selector:nth-of-type(2):hover,
+.profile-form__option:nth-of-type(3):checked ~ .profile-form__option-selector:nth-of-type(3):hover {
+  border-color: transparent;
 }
 
 .profile-form__options:hover .profile-form__option-selector {
@@ -374,32 +380,32 @@ input[name=view]:checked + .container .container__toggleview {
 label[for=Male] {
   background: #f5f8f9 url(../assets/male.svg) no-repeat;
   background-size: 25px 25px;
-  background-position: calc(50% + 1px) 50%;
+  background-position: calc(50% + 1px) calc(50% + 1px);
 }
 
 label[for=Male]::before {
   background: #babfcd url(../assets/male-solid.svg) no-repeat;
   background-size: 25px 25px;
-  background-position: calc(50% + 1px) 50%;
+  background-position: calc(50% + 1px) calc(50% + 1px);
 }
 
 label[for=Female] {
   background: #f5f8f9 url(../assets/female.svg) no-repeat;
-  background-size: 25px 25px;
-  background-position: calc(50% + 1px) calc(50% + 1px);
+  background-size: 22px 30px;
+  background-position: 50% calc(50% + 1px);
 }
 
 label[for=Female]::before {
   background: #babfcd url(../assets/female-solid.svg) no-repeat;
-  background-size: 25px 25px;
-  background-position: calc(50% + 1px) calc(50% + 1px);
+  background-size: 22px 30px;
+  background-position: 50% calc(50% + 1px);
 }
 
 label[for=Classic],
 label[for=Silver],
 label[for=Gold] {
   background: #f5f8f9 url(../assets/card.svg) no-repeat;
-  background-size: 25px 25px;
+  background-size: 27px 19px;
   background-position: calc(50% + 1px) 50%;
 }
 
