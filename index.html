@@ -26,7 +26,7 @@
           </div>
           <div class="profile-form__entry">
             <span class="profile-form__field profile-form__entry-name">Gender</span
-            ><fieldset class="profile-form__field profile-form__entry-value profile-form___options">
+            ><fieldset class="profile-form__field profile-form__entry-value profile-form__options">
               <input type="radio" name="gender" value="male" class="profile-form__option" id="Male" />
               <input type="radio" name="gender" value="female" class="profile-form__option" id="Female" />
               <label for="Male" class="profile-form__option-selector panel__action"></label>
@@ -34,28 +34,47 @@
             </fieldset>
           </div>
           <div class="profile-form__entry">
-            <span class="profile-form__field profile-form__entry-name">Name</span
+            <span class="profile-form__field profile-form__entry-name">Date of Birth</span
             ><span class="profile-form__field profile-form__entry-value">
               <input class="profile-form__input">
+              <i class="profile-form__entry-icon profile-form__entry-dob"></i>
             </span>
           </div>
           <div class="profile-form__entry">
-            <span class="profile-form__field profile-form__entry-name">Name</span
+            <span class="profile-form__field profile-form__entry-name">Email</span
             ><span class="profile-form__field profile-form__entry-value">
-              <input class="profile-form__input">
+              <input class="profile-form__input" type="email">
+              <i class="profile-form__input-invalid" data-field="email address"></i>
             </span>
           </div>
           <div class="profile-form__entry">
-            <span class="profile-form__field profile-form__entry-name">Name</span
+            <span class="profile-form__field profile-form__entry-name">Mobile</span
             ><span class="profile-form__field profile-form__entry-value">
-              <input class="profile-form__input">
+              <input class="profile-form__input" type="tel" pattern="^[0-9]{10}$">
+              <i class="profile-form__input-invalid" data-field="mobile number"></i>
             </span>
           </div>
           <div class="profile-form__entry">
-            <span class="profile-form__field profile-form__entry-name">Name</span
+            <span class="profile-form__field profile-form__entry-name">Customer ID</span
             ><span class="profile-form__field profile-form__entry-value">
               <input class="profile-form__input">
             </span>
+            </span>
+          </div>
+          <div class="profile-form__entry">
+            <span class="profile-form__field profile-form__entry-name">Membership</span
+            ><fieldset class="profile-form__field profile-form__entry-value profile-form__options">
+              <input type="radio" name="membership" value="classic" class="profile-form__option" id="Classic" />
+              <input type="radio" name="membership" value="silver" class="profile-form__option" id="Silver" />
+              <input type="radio" name="membership" value="gold" class="profile-form__option" id="Gold" />
+              <label for="Classic" class="profile-form__option-selector panel__action"></label
+              ><label for="Silver" class="profile-form__option-selector panel__action"></label
+              ><label for="Gold" class="profile-form__option-selector panel__action"></label>
+            </fieldset>
+          </div>
+          <div class="profile-form__actions">
+            <button class="profile-form__btn profile-form__btn--cancel" type="cancel">Cancel</button>
+            <button class="profile-form__btn profile-form__btn--submit" type="button">Save</button>
           </div>
         </form>
       </div>
