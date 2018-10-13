@@ -6,6 +6,7 @@
 *, *::before, *::after {
   box-sizing: inherit;
   text-shadow: 0 1px rgba(64,64,64,0.15);
+  transition: all 0.25s ease-in-out;
 }
 
 html {
@@ -19,11 +20,33 @@ html, body {
   min-height: 100%;
   font-family: Arial;
 }
-
-.viewselector, .profile-form__option {
+button {
+  height: 53px;
+  border: none;
+  background: #f5f8f9;
+  text-transform: uppercase;
+  font-size: 15px;
+  width: 160px;
+  border-radius: 5px;
+  margin-left: 21px;
+}
+button:focus {
+  outline: none;
+}
+input {
+  background: #f5f8f9;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 20px;
+  height: 53px;
+  font-size: 16px;
+}
+input[type=checkbox],
+input[type=radio] {
   display: none;
 }
-
 main {
   margin: 0 auto;
   border-radius: 42.5px;
@@ -35,7 +58,9 @@ main {
   display: flex;
   position: relative;
   height: 100%;
+  min-height: 100%;
   width: 100%;
+  align-items: stretch;
 }
 
 .panel {
@@ -59,7 +84,6 @@ main {
   background-size: 100% 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  transition: all 250ms ease-in-out;
 }
 
 .avatar__img:hover {
@@ -71,22 +95,21 @@ main {
   z-index: 2;
 }
 
-.panel--info {
+.form__info {
   background: #ff9200;
   color: var(--black);
-}
-
-.panel--info {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 .container__toggleview {
   width: 64px;
   height: 64px;
   background: url(../assets/group-3.svg) center no-repeat;
-  transition: all 0.25s;
   display: inline-block;
   position: absolute;
   bottom: 116px;
@@ -94,7 +117,7 @@ main {
   margin-left: -32px;
 }
 
-.panel__action {
+label, button {
   cursor: pointer;
 }
 
@@ -106,74 +129,94 @@ main {
   margin: 1.5rem 0;
 }
 
-.panel--form {
-  color: var(--charcoal-grey);
-}
-
-.profile-form__field {
+.entry__parameter {
   display: inline-block;
-  height: 100%;
+  height: 53px;
+  line-height: 53px;
   border: none;
   margin: 0;
   padding: 0;
   position: relative;
+  order: 0;
+}
+
+.entry__parameter:nth-child(1) {
+  order: 1;
 }
 
 input[name=view]:checked + .container .container__toggleview {
   transform: rotate(-180deg);
 }
 
+.entry__parameter--field::before {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff9200;
+  top: 18px;
+  left: -12px;
+}
 .profile-form {
   font-size: 16px;
 }
 
-.profile-form__entry:last-of-type {
-  margin: 3rem 0;
+.entry {
+  display: flex;
+  position: relative;
 }
 
-.profile-form__input {
+.entry__parameter--value {
   background: #f5f8f9;
-  transition: all 0.25s;
   width: 100%;
   border: none;
   border-radius: 5px;
   outline: none;
   padding: 0 20px;
-  transition: all 0.25s;
   height: 53px;
 }
 
-.profile-form__input:focus {
+.entry__parameter--value:focus {
   border: 1px solid #cad7dd;
 }
 
-.profile-form__option-selector {
+.entry__value-options {
+  background: transparent;
+  padding: 0;
+}
+
+.entry__value-options:focus {
+  border: none;
+}
+
+.entry__value-option-selector {
   width: 53px;
   height: 53px;
   display: inline-block;
   vertical-align: top;
   border-radius: 50%;
   position: relative;
-  transition: all 0.25s;
   color: #b1bfcd;
-  border: 1px solid transparent;
+  border: 1px solid #f5f8f0;
 }
 
-.profile-form__option-selector:hover {
-  border: 1px solid #b3c1ce;
+.entry__value-option-selector:hover {
+  border-color: #b3c1ce;
 }
 
-.profile-form__option:nth-of-type(1):checked ~ .profile-form__option-selector:hover,
-.profile-form__option:nth-of-type(2):checked ~ .profile-form__option-selector:nth-of-type(2):hover,
-.profile-form__option:nth-of-type(3):checked ~ .profile-form__option-selector:nth-of-type(3):hover {
+.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1):hover,
+.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2):hover,
+.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3):hover {
   border-color: transparent;
 }
 
-.profile-form__options:hover .profile-form__option-selector {
+.entry__value-options:hover .entry__value-option-selector {
   color: var(--charcoal-grey);
 }
 
-.profile-form__option-selector::after {
+.entry__value-option-selector::after {
   position: absolute;
   content: attr(for);
   height: 100%;
@@ -183,26 +226,26 @@ input[name=view]:checked + .container .container__toggleview {
   font-size: 14px;
 }
 
-.profile-form__option:nth-child(2) + .profile-form__option-selector {
+.entry__value-option:nth-child(2) + .entry__value-option-selector {
   margin-right: calc(50% - 53px);
 }
 
-.profile-form__option:nth-child(2) + .profile-form__option-selector::after,
-.profile-form__option:nth-child(2) + .profile-form__option-selector ~ .profile-form__option-selector::after {
+.entry__value-option:nth-child(2) + .entry__value-option-selector::after,
+.entry__value-option:nth-child(2) + .entry__value-option-selector ~ .entry__value-option-selector::after {
   width: calc((380px - 106px)/2);
   padding: 0 22px;
 }
 
-.profile-form__option:nth-child(3) ~ .profile-form__option-selector:not(:nth-of-type(3)) {
+.entry__value-option:nth-child(3) ~ .entry__value-option-selector:not(:nth-of-type(3)) {
   margin-right: calc(100%/3 - 45px);
 }
 
-.profile-form__option:nth-child(3) ~ .profile-form__option-selector::after {
+.entry__value-option:nth-child(3) ~ .entry__value-option-selector::after {
   width: calc(380px/3 - 53px);
   padding: 0 10px;
 }
 
-.profile-form__option-selector::before {
+.entry__value-option-selector::before {
   content: '';
   position: absolute;
   top: 0;
@@ -215,34 +258,36 @@ input[name=view]:checked + .container .container__toggleview {
   transition: opacity 0.25s, clip-path 0s 0.25s;
 }
 
-.profile-form__option:nth-of-type(1):checked ~ .profile-form__option-selector:nth-of-type(1)::before,
-.profile-form__option:nth-of-type(2):checked ~ .profile-form__option-selector:nth-of-type(2)::before,
-.profile-form__option:nth-of-type(3):checked ~ .profile-form__option-selector:nth-of-type(3)::before {
+.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1)::before,
+.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2)::before,
+.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3)::before {
   transition: opacity 0s, clip-path 0.4s;
   clip-path: circle(100%);
   opacity: 1;
 }
 
-.profile-form__entry-icon {
+.profile-form__icon--dob::before {
   position: absolute;
+  content: '';
   right: 20px;
-  top: 16px;
+  bottom: 16px;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.profile-form__entry-dob {
+.profile-form__icon--dob::before {
   width: 20px;
   height: 20px;
   background: url(../assets/dob.svg) center no-repeat;
   background-size: 100% 100%;
 }
 
-.profile-form__input:not(:valid) {
+.entry__parameter--value:invalid {
   border: 1px solid #ff9200;
   color: #ff9200;
-  transition: all 0.25s;
 }
 
-.profile-form__input-invalid {
+.entry__info--invalid {
   position: absolute;
   font-size: 12px;
   line-height: 16px;
@@ -251,14 +296,18 @@ input[name=view]:checked + .container .container__toggleview {
   right: 0;
   font-style: normal;
   opacity: 0;
-  transition: all 0.25s;
 }
 
-.profile-form__input-invalid::after {
-  content: 'invalid ' attr(data-field);
+.entry__info--invalid::after {
+  content: 'Invalid ' attr(data-field);
 }
 
-.profile-form__input:not(:valid) ~ .profile-form__input-invalid {
+.entry__parameter--value:invalid ~ .entry__parameter--field {
+  color: #ff9200;
+}
+
+.entry__parameter--value:invalid ~ .entry__info--invalid,
+.entry__parameter--value:invalid ~ .entry__parameter--field::before {
   opacity: 1;
 }
 
@@ -266,20 +315,11 @@ input[name=view]:checked + .container .container__toggleview {
   text-align: right;
 }
 
-.profile-form__btn {
-  height: 53px;
-  border: none;
-  background: #f5f8f9;
-  text-transform: uppercase;
-  font-size: 15px;
-  width: 160px;
-  border-radius: 5px;
-  margin-left: 21px;
-}
-
 .profile-form__btn--success {
   background: #60e6c5;
   color: white;
 }
 
-
+.profile-form__actions button:first-of-type {
+  margin-left: 0;
+}

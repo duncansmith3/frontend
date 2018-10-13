@@ -1,0 +1,6 @@
+.panel {
+  width: calc(100% - 392px);
+}
+.panel--avatar {
+  width: 392px;
+}

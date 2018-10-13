@@ -1,0 +1,39 @@
+main {
+  margin: 66px auto;
+}
+.panel {
+  height: 100%;
+}
+.avatar__img {
+  margin: 50px 0;
+}
+.panel--avatar {
+  max-width: 50%;
+  border-top-left-radius: 42.5px;
+  border-bottom-left-radius: 42.5px;
+}
+.form__info {
+  transform: translateX(-100%);
+  transition: 0.25s all ease-in-out, opacity 0s 0.25s;
+  opacity: 0;
+  padding: 164px 81px;
+}
+.form__info .panel__heading {
+  line-height: 43px;
+  font-size: 36px;
+}
+.panel__text {
+  line-height: 1.53;
+  font-size: 18px;
+}
+.entry {
+  margin: 21px 0;
+}
+input[name=view]:checked + .container .form__info {
+  transform: translateX(0);
+  transition: 0.25s all ease-in-out, opacity 0s;
+  opacity: 1;
+}
+.profile-form__btn:hover {
+  transform: scale(1.1);
+}

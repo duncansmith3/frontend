@@ -2,11 +2,7 @@ main {
   width: 975px;
   height: 892px;
 }
-.panel {
-  width: calc(100% - 392px);
-}
 .panel--avatar {
-  width: 392px;
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -14,30 +10,10 @@ main {
   line-height: 28px;
   font-size: 24px;
 }
-.panel--info .panel__heading {
-  line-height: 43px;
-  font-size: 36px;
-}
-.panel__text {
-  line-height: 1.53;
-  font-size: 18px;
-}
 .panel--form {
   padding: 64px 40px;
   line-height: 53px;
 }
-.panel--info .panel__text {
+.form__info .panel__text {
   padding: 1.5rem 0;
-}
-.profile-form__field:nth-child(1) {
-  width: 123px;
-}
-.profile-form__field:nth-child(2) {
-  width: calc(100% - 123px);
-}
-.profile-form__entry {
-  margin: 21px 0;
-}
-.profile-form__entry:last-of-type {
-  margin: 4rem 0 5rem;
 }
