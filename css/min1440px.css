@@ -1,0 +1,19 @@
+main {
+  width: 1360px;
+  height: 892px;
+}
+.panel {
+  width: calc(100% - 553px);
+  height: 100%;
+}
+.panel--avatar {
+  width: 553px;
+}
+.panel__heading {
+  line-height: 43px;
+  font-size: 36px;
+}
+.panel__text {
+  line-height: 1.53;
+  font-size: 18px;
+}

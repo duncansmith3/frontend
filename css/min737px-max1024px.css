@@ -1,0 +1,4 @@
+main {
+  max-width: 975px;
+  width: calc(100% - 50px);
+}
