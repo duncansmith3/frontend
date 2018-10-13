@@ -1,0 +1,10 @@
+main {
+  width: 100%;
+}
+.panel--info {
+  transform: translateY(-100%);
+  transition: 0.25 all ease-in-out;
+}
+input[name=view]:checked + .container .panel--info {
+  transform: translateY(0);
+}
