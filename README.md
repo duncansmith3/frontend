@@ -37,4 +37,4 @@ This allows Tablet mode to seamlessly adapt between Mobile and Desktop viewports
 ## Where you will be impressed
 Absolutely no JavaScript has been used to toggle views; in fact, no class toggling is used anywhere in the interface! This is due to the considerable use of sibling and element state CSS selectors.
 
-Javascript is solely used to control window scrolling when in Mobile mode. Potential jank is mitigated by using `window.requestAnimationFrame()`, which leverages browser optimisations to achieve 60fps animations. Additionally, an `easeInOut` transition implementation is provided as the client seems to prefer that timing function :).
+Javascript is solely used to control window scrolling when in Mobile mode. Potential jank is mitigated by using `window.requestAnimationFrame()`, which leverages browser optimisations to achieve 60fps animations. Additionally, an `easeInOut` transition implementation is provided as the client seems to prefer that timing function :)
