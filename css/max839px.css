@@ -1,28 +1,13 @@
 main {
   width: 100%;
-}
-.form__info {
-  transform: translateY(-100%);
-  transition: 0.25s all ease-in-out;
-}
-.container__toggleview {
-  transform: rotate(90deg);
-}
-main {
   border-radius: 0;
 }
 .container {
   flex-direction: column;
 }
 .panel {
-  min-height: 100vh;
+  min-height: 860px;
   width: 100%;
-}
-.avatar__img {
-  margin: 0 auto 93px;
-}
-.panel__heading {
-  font-size: 36px;
 }
 .panel--avatar {
   border-top-left-radius: 0;
@@ -31,29 +16,40 @@ main {
   font-size: 22px;
 }
 .form__info {
+  transform: translateY(-100%);
+  transition: 0.25s all ease-in-out;
+}
+.container__toggleview {
+  transform: rotate(90deg);
+}
+.avatar__img {
+  margin: 0 auto 93px;
+}
+.panel__heading {
+  font-size: 36px;
+}
+.form__info {
   padding: 69px 20px;
 }
 .panel__text {
   font-size: 18px;
+}
+.profile-form__btn {
+  width: 100%;
+  margin: 5px auto;
+}
+.profile-form div:nth-last-of-type(2) {
+  height: 150px;
+  margin-bottom: 34px;
+}
+/* Target the 3-sibling labels */
+.entry__value-option:nth-child(3) ~ .entry__value-option-selector:not(:nth-of-type(3)) {
+  margin-right: calc(50% - 53px);
+  margin-bottom: 15px;
 }
 input[name=view]:checked + .container .container__toggleview {
   transform: rotate(-90deg);
 }
 input[name=view]:checked + .container .form__info {
   transform: translateY(0);
-}
-
-.profile-form__btn {
-  width: 100%;
-  margin: 5px auto;
-}
-
-.profile-form div:nth-last-of-type(2) {
-  height: 150px;
-  margin-bottom: 34px;
-}
-
-.entry__value-option:nth-child(3) ~ .entry__value-option-selector:not(:nth-of-type(3)) {
-  margin-right: calc(50% - 53px);
-  margin-bottom: 15px;
 }

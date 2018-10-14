@@ -9,11 +9,11 @@ main {
 .panel--avatar {
   width: 553px;
 }
-.form__info {
-  padding: 161px 124px;
-}
 .panel--form {
   padding: 112px 156px;
+}
+.form__info {
+  padding: 161px 124px;
 }
 .panel__heading {
   line-height: 43px;

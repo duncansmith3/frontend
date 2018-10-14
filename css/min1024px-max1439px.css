@@ -6,13 +6,13 @@ main {
   padding-left: 40px;
   padding-right: 40px;
 }
-.panel__heading {
-  line-height: 28px;
-  font-size: 24px;
-}
 .panel--form {
   padding: 64px 40px;
   line-height: 53px;
+}
+.panel__heading {
+  line-height: 28px;
+  font-size: 24px;
 }
 .form__info .panel__text {
   padding: 1.5rem 0;

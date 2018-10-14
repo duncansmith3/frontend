@@ -3,25 +3,21 @@ label[for=Male] {
   background-size: 25px 25px;
   background-position: calc(50% + 1px) calc(50% + 1px);
 }
-
 label[for=Male]::before {
   background: #babfcd url(../assets/male-solid.svg) no-repeat;
   background-size: 25px 25px;
   background-position: calc(50% + 1px) calc(50% + 1px);
 }
-
 label[for=Female] {
   background: #f5f8f9 url(../assets/female.svg) no-repeat;
   background-size: 22px 30px;
   background-position: 50% calc(50% + 1px);
 }
-
 label[for=Female]::before {
   background: #babfcd url(../assets/female-solid.svg) no-repeat;
   background-size: 22px 30px;
   background-position: 50% calc(50% + 1px);
 }
-
 label[for=Classic],
 label[for=Silver],
 label[for=Gold] {
@@ -29,7 +25,6 @@ label[for=Gold] {
   background-size: 27px 19px;
   background-position: calc(50% + 1px) 50%;
 }
-
 label[for=Classic]::before,
 label[for=Silver]::before,
 label[for=Gold]::before {
@@ -37,5 +32,4 @@ label[for=Gold]::before {
   background-size: 25px 25px;
   background-position: calc(50% + 1px) 50%;
 }
-
 

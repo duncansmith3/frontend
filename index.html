@@ -23,41 +23,41 @@
         </div>
         <form class="profile-form" method="post" action="#">
           <div class="entry">
-            <input class="entry__parameter entry__parameter--value">
+            <input class="entry__parameter entry__parameter--value" placeholder="Kendall Jenner" tabindex=1 />
             <span class="entry__parameter entry__parameter--field">Name</span>
           </div>
           <div class="entry">
             <fieldset class="entry__parameter entry__parameter--value entry__value-options">
-              <input type="radio" name="gender" value="male" class="entry__value-option" id="Male" autocomplete=off />
-              <input type="radio" name="gender" value="female" class="entry__value-option" id="Female" autocomplete=off />
+              <input type="radio" name="gender" value="male" class="entry__value-option" id="Male" autocomplete=off  tabindex=2 />
+              <input type="radio" name="gender" value="female" class="entry__value-option" id="Female" autocomplete=off  tabindex=3 />
               <label for="Male" class="entry__value-option-selector"></label>
               <label for="Female" class="entry__value-option-selector"></label>
             </fieldset>
             <span class="entry__parameter entry__parameter--field">Gender</span>
           </div>
           <div class="entry profile-form__icon profile-form__icon--dob">
-            <input class="entry__parameter entry__parameter--value">
+            <input class="entry__parameter entry__parameter--value" placeholder="01/02/1983" tabindex=4>
             <span class="entry__parameter entry__parameter--field">Date of Birth</span>
           </div>
           <div class="entry">
-            <input class="entry__parameter entry__parameter--value" type="email">
+            <input class="entry__parameter entry__parameter--value" type="email" placeholder="kendall@email.com" tabindex=5>
             <span class="entry__parameter entry__parameter--field">Email</span>
             <i class="entry__info--invalid" data-field="email address"></i>
           </div>
           <div class="entry">
-            <input class="entry__parameter entry__parameter--value" type="tel" pattern="^[0-9]{10}$">
+            <input class="entry__parameter entry__parameter--value" type="tel" pattern="^[0-9]{10}$" placeholder="+91 98765 43210" tabindex=6>
             <span class="entry__parameter entry__parameter--field">Mobile</span>
             <i class="entry__info--invalid" data-field="mobile number"></i>
           </div>
           <div class="entry">
-            <input class="entry__parameter entry__parameter--value">
+            <input class="entry__parameter entry__parameter--value" placeholder="576802-ERD0348 45" tabindex=7>
             <span class="entry__parameter entry__parameter--field">Customer ID</span>
           </div>
           <div class="entry">
             <fieldset class="entry__parameter entry__parameter--value entry__value-options">
-              <input type="radio" name="membership" value="classic" class="entry__value-option" id="Classic" autocomplete=off />
-              <input type="radio" name="membership" value="silver" class="entry__value-option" id="Silver" autocomplete=off />
-              <input type="radio" name="membership" value="gold" class="entry__value-option" id="Gold" autocomplete=off />
+              <input type="radio" name="membership" value="classic" class="entry__value-option" id="Classic" autocomplete=off  tabindex=8 />
+              <input type="radio" name="membership" value="silver" class="entry__value-option" id="Silver" autocomplete=off tabindex=9 />
+              <input type="radio" name="membership" value="gold" class="entry__value-option" id="Gold" autocomplete=off tabindex=10 />
               <label for="Classic" class="entry__value-option-selector"></label
               ><label for="Silver" class="entry__value-option-selector"></label
               ><label for="Gold" class="entry__value-option-selector"></label>

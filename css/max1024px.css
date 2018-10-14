@@ -13,6 +13,9 @@ main {
 .panel--form {
   padding: 64px 20px;
 }
+.profile-form__field {
+  width: 100%;
+}
 .profile-form__entry {
   width: 100%;
   margin: 0 0 21px ;
@@ -27,8 +30,3 @@ main {
   height: 32px;
   line-height: 32px;
 }
-
-.profile-form__field {
-  width: 100%;
-}
-

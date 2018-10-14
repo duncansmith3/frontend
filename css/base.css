@@ -1,59 +1,3 @@
-:root {
-  --black: #383838;
-  --charcoal-grey: #373d40;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-  text-shadow: 0 1px rgba(64,64,64,0.15);
-  transition: all 0.25s ease-in-out;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  min-height: 100%;
-  font-family: Arial;
-}
-button {
-  height: 53px;
-  border: none;
-  background: #f5f8f9;
-  text-transform: uppercase;
-  font-size: 15px;
-  width: 160px;
-  border-radius: 5px;
-  margin-left: 21px;
-}
-button:focus {
-  outline: none;
-}
-input {
-  background: #f5f8f9;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  padding: 0 20px;
-  height: 53px;
-  font-size: 16px;
-}
-input[type=checkbox],
-input[type=radio] {
-  display: none;
-}
-main {
-  margin: 0 auto;
-  border-radius: 42.5px;
-  box-shadow: 0 0 40px 2px rgba(80,80,80,0.15);
-  overflow: hidden;
-}
-
 .container {
   display: flex;
   position: relative;
@@ -62,19 +6,17 @@ main {
   width: 100%;
   align-items: stretch;
 }
-
 .panel {
   position: relative;
   z-index: 1;
 }
-
 .panel--avatar {
   background: #ffd500;
   text-align: center;
   padding: 112px 0;
   color: var(--black);
+  z-index: 2;
 }
-
 .avatar__img {
   display: inline-block;
   width: 238px;
@@ -85,16 +27,6 @@ main {
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
-
-.avatar__img:hover {
-  background-size: 300px 300px;
-  background-position: 50% 75%;
-}
-
-.panel.panel--avatar {
-  z-index: 2;
-}
-
 .form__info {
   background: #ff9200;
   color: var(--black);
@@ -105,7 +37,6 @@ main {
   bottom: 0;
   z-index: 2;
 }
-
 .container__toggleview {
   width: 64px;
   height: 64px;
@@ -116,19 +47,12 @@ main {
   left: 50%;
   margin-left: -32px;
 }
-
-label, button {
-  cursor: pointer;
-}
-
 .panel__heading {
   margin: 0;
 }
-
 .panel__text {
   margin: 1.5rem 0;
 }
-
 .entry__parameter {
   display: inline-block;
   height: 53px;
@@ -139,58 +63,38 @@ label, button {
   position: relative;
   order: 0;
 }
-
-.entry__parameter:nth-child(1) {
-  order: 1;
-}
-
-input[name=view]:checked + .container .container__toggleview {
-  transform: rotate(-180deg);
-}
-
-.entry__parameter--field::before {
-  content: '';
-  opacity: 0;
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff9200;
-  top: 18px;
-  left: -12px;
-}
 .profile-form {
   font-size: 16px;
 }
-
 .entry {
   display: flex;
   position: relative;
 }
-
 .entry__parameter--value {
-  background: #f5f8f9;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  outline: none;
+  border: 1px solid transparent;
   padding: 0 20px;
-  height: 53px;
 }
-
-.entry__parameter--value:focus {
-  border: 1px solid #cad7dd;
+.profile-form__actions {
+  text-align: right;
 }
-
+.profile-form__btn--success {
+  background: #60e6c5;
+  color: white;
+}
+.entry__info--invalid {
+  position: absolute;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ff9200;
+  bottom: -16px;
+  right: 0;
+  font-style: normal;
+  opacity: 0;
+}
 .entry__value-options {
   background: transparent;
   padding: 0;
 }
-
-.entry__value-options:focus {
-  border: none;
-}
-
 .entry__value-option-selector {
   width: 53px;
   height: 53px;
@@ -201,21 +105,19 @@ input[name=view]:checked + .container .container__toggleview {
   color: #b1bfcd;
   border: 1px solid #f5f8f0;
 }
-
+.entry__parameter--value:focus {
+  border-color: #cad7dd;
+}
+.entry__value-options:focus {
+  border: none;
+}
 .entry__value-option-selector:hover {
   border-color: #b3c1ce;
 }
-
-.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1):hover,
-.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2):hover,
-.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3):hover {
-  border-color: transparent;
+.entry__parameter--value:invalid {
+  border: 1px solid #ff9200;
+  color: #ff9200;
 }
-
-.entry__value-options:hover .entry__value-option-selector {
-  color: var(--charcoal-grey);
-}
-
 .entry__value-option-selector::after {
   position: absolute;
   content: attr(for);
@@ -225,26 +127,6 @@ input[name=view]:checked + .container .container__toggleview {
   left: 100%;
   font-size: 14px;
 }
-
-.entry__value-option:nth-child(2) + .entry__value-option-selector {
-  margin-right: calc(50% - 53px);
-}
-
-.entry__value-option:nth-child(2) + .entry__value-option-selector::after,
-.entry__value-option:nth-child(2) + .entry__value-option-selector ~ .entry__value-option-selector::after {
-  width: calc((380px - 106px)/2);
-  padding: 0 22px;
-}
-
-.entry__value-option:nth-child(3) ~ .entry__value-option-selector:not(:nth-of-type(3)) {
-  margin-right: calc(100%/3 - 45px);
-}
-
-.entry__value-option:nth-child(3) ~ .entry__value-option-selector::after {
-  width: calc(380px/3 - 53px);
-  padding: 0 10px;
-}
-
 .entry__value-option-selector::before {
   content: '';
   position: absolute;
@@ -257,15 +139,6 @@ input[name=view]:checked + .container .container__toggleview {
   clip-path: circle(0px at 50% 50%);
   transition: opacity 0.25s, clip-path 0s 0.25s;
 }
-
-.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1)::before,
-.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2)::before,
-.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3)::before {
-  transition: opacity 0s, clip-path 0.4s;
-  clip-path: circle(100%);
-  opacity: 1;
-}
-
 .profile-form__icon--dob::before {
   position: absolute;
   content: '';
@@ -274,52 +147,84 @@ input[name=view]:checked + .container .container__toggleview {
   z-index: 1;
   pointer-events: none;
 }
-
 .profile-form__icon--dob::before {
   width: 20px;
   height: 20px;
   background: url(../assets/dob.svg) center no-repeat;
   background-size: 100% 100%;
 }
-
-.entry__parameter--value:invalid {
-  border: 1px solid #ff9200;
-  color: #ff9200;
-}
-
-.entry__info--invalid {
-  position: absolute;
-  font-size: 12px;
-  line-height: 16px;
-  color: #ff9200;
-  bottom: -16px;
-  right: 0;
-  font-style: normal;
-  opacity: 0;
-}
-
 .entry__info--invalid::after {
   content: 'Invalid ' attr(data-field);
+  text-shadow: none;
 }
-
+.avatar__img:hover {
+  background-size: 300px 300px;
+  background-position: 50% 75%;
+}
+.entry__parameter--field::before {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff9200;
+  top: 18px;
+  left: -12px;
+}
+.entry__parameter:nth-child(1) {
+  order: 1;
+}
+.entry__value-options:hover .entry__value-option-selector {
+  color: var(--charcoal-grey);
+}
+.profile-form__actions button:first-of-type {
+  margin-left: 0;
+}
 .entry__parameter--value:invalid ~ .entry__parameter--field {
   color: #ff9200;
 }
-
 .entry__parameter--value:invalid ~ .entry__info--invalid,
 .entry__parameter--value:invalid ~ .entry__parameter--field::before {
   opacity: 1;
 }
-
-.profile-form__actions {
-  text-align: right;
+.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1)::before,
+.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2)::before,
+.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3)::before {
+  transition: opacity 0s, clip-path 0.4s;
+  clip-path: circle(100%);
+  opacity: 1;
 }
-
-.profile-form__btn--success {
-  background: #60e6c5;
-  color: white;
+.entry__value-option:nth-of-type(1):checked ~ .entry__value-option-selector:nth-of-type(1):hover,
+.entry__value-option:nth-of-type(2):checked ~ .entry__value-option-selector:nth-of-type(2):hover,
+.entry__value-option:nth-of-type(3):checked ~ .entry__value-option-selector:nth-of-type(3):hover {
+  border-color: transparent;
 }
-
-.profile-form__actions button:first-of-type {
-  margin-left: 0;
+/* Target the 2-label setup.
+ * Siblings are of the form: input, input, label, label
+ * Thus, the second input's next sibling is a label, denoting a 2-label setup.
+ * This way, margin-right's are dependent on (width of container) / 2
+ */
+.entry__value-option:nth-child(2) + .entry__value-option-selector {
+  margin-right: calc(50% - 53px);
+}
+.entry__value-option:nth-child(2) + .entry__value-option-selector::after,
+.entry__value-option:nth-child(2) + .entry__value-option-selector ~ .entry__value-option-selector::after {
+  width: calc((380px - 106px)/2);
+  padding: 0 22px;
+}
+/* Target the 3-label setup.
+ * Siblings are of the form: input, input, input, label, label, label
+ * Thus, the third input's next sibling is a label, denoting a 3-label setup.
+ * This way, margin-right's are dependent on (width of container) / 3
+ */
+.entry__value-option:nth-child(3) ~ .entry__value-option-selector:not(:nth-of-type(3)) {
+  margin-right: calc(100%/3 - 45px);
+}
+.entry__value-option:nth-child(3) ~ .entry__value-option-selector::after {
+  width: calc(380px/3 - 53px);
+  padding: 0 10px;
+}
+input[name=view]:checked + .container .container__toggleview {
+  transform: rotate(-180deg);
 }

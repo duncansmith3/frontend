@@ -1,19 +1,12 @@
+@import url('settings.css');
+@import url('generic.css');
 @import url('base.css');
-
 @import url('min1440px.css') screen and (min-width: 1440px);
-
 @import url('min1024px-max1439px.css') screen and (min-width: 1024px) and (max-width: 1439px);
-
 @import url('min1024px.css') screen and (min-width: 1024px);
-
 @import url('max1023px.css') screen and (max-width: 1023px);
-
 @import url('min840px-max1439px.css') screen and (min-width: 840px) and (max-width: 1439px);
-
 @import url('min840px-max1024px.css') screen and (min-width: 840px) and (max-width: 1024px);
-
 @import url('min840px.css') screen and (min-width: 840px);
-
 @import url('max839px.css') screen and (max-width: 839px);
-
 @import url('specific.css');

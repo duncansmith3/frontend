@@ -1,0 +1,60 @@
+*, *::before, *::after {
+  box-sizing: inherit;
+  text-shadow: 0 1px rgba(64,64,64,0.15);
+  transition: all 0.25s ease-in-out;
+}
+html {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-family: Arial;
+}
+button {
+  height: 53px;
+  border: none;
+  background: #f5f8f9;
+  text-transform: uppercase;
+  font-size: 15px;
+  width: 160px;
+  border-radius: 5px;
+  margin-left: 21px;
+}
+button:focus {
+  outline: none;
+}
+label, button {
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+input {
+  background: #f5f8f9;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 20px;
+  height: 53px;
+  font-size: 16px;
+  text-shadow: none;
+}
+input[type=checkbox],
+input[type=radio] {
+  position: absolute;
+  left: -2000px;
+}
+input::placeholder {
+  color: #b1bfcd;
+  text-shadow: none;
+}
+main {
+  margin: 0 auto;
+  border-radius: 42.5px;
+  box-shadow: 0 0 40px 2px rgba(80,80,80,0.15);
+  overflow: hidden;
+}
+
