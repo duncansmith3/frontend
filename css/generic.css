@@ -44,8 +44,7 @@ input {
 }
 input[type=checkbox],
 input[type=radio] {
-  position: absolute;
-  left: -2000px;
+  display: none;
 }
 input::placeholder {
   color: #b1bfcd;

@@ -6,9 +6,10 @@ let newPosition = 0;
 let terminalPosition = 0;
 let startScrollTimeout = null;
 let scrollDuration = 750;
-let scrollDelay = getTransitionDuration(formPanel);
+let scrollDelay = getTransitionDuration(formPanel.querySelector('.form__info')) || 250;
 
 function mobileScroll(e) {
+  e.preventDefault();
   if (isScrolling) {
     return false;
   }
@@ -58,15 +59,14 @@ function easeInOut(p){
 }
 
 function getTransitionDuration(el) {
-  let duration = window.getComputedStyle(el, null).getPropertyValue('transition')
+  let duration = window.getComputedStyle(el, null).getPropertyValue('transition-duration').replace(/,/g, '')
                    .split(' ')
                    .filter(param => param.match(/[\d|\.]+m?s/))
                    .map(time => {
                      time = time.replace(/s/, '');
                      return Number(time) ? +time * 1000 : +(time.replace(/m/, ''))
-                     return time;
                    })
-                   .reduce((collect, param) => collect);
+                   .reduce((collect, param) => collect || param, 0);
   return duration;
 }
 
