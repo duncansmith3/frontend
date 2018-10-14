@@ -8,6 +8,7 @@ main {
 }
 .panel--avatar {
   width: 553px;
+  padding: 112px 98px;
 }
 .panel--form {
   padding: 112px 156px;
@@ -22,4 +23,8 @@ main {
 .panel__text {
   line-height: 1.53;
   font-size: 18px;
+}
+.panel__text.avatar__brief {
+  line-height: 1.26;
+  font-size: 22px;
 }

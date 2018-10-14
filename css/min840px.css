@@ -16,7 +16,6 @@ main {
   transform: translateX(-100%);
   transition: 0.25s all ease-in-out, opacity 0s 0.25s;
   opacity: 0;
-  padding: 164px 81px;
 }
 .panel__text {
   line-height: 1.53;
